@@ -5,15 +5,15 @@ class UniqueID(object):
     """
     Generates Unique ID.
     """
-    DEFAULT_MAX_LENGTH = 14
+    DEFAULT_ID_LENGTH = 14
     DEFAULT_EXCLUDED_CHARS = ":*^`\",.~;%+-'"
 
-    def __init__(self, max_length=DEFAULT_MAX_LENGTH, excluded_chars=DEFAULT_EXCLUDED_CHARS):
+    def __init__(self, length=DEFAULT_ID_LENGTH, excluded_chars=DEFAULT_EXCLUDED_CHARS):
         """
-        `max_length` - defines max length of unique ID.
+        `length` - defines length of unique ID.
         `excluded_chars` - defines chars excluded during generate process of unique ID.
         """
-        self.max_length = max_length
+        self.id_length = length
         self.excluded_chars = excluded_chars
 
     def get_random_bits(self):
@@ -37,7 +37,7 @@ class UniqueID(object):
         """
         unique_id = ""
 
-        while len(unique_id) < self.max_length:
+        while len(unique_id) < self.id_length:
             ascii_number = self.get_random_bits()
 
             if self.is_approved_ascii(ascii_number):
@@ -49,9 +49,10 @@ class UniqueID(object):
         return unique_id
 
 
-def get_unique_id(max_length=UniqueID.DEFAULT_MAX_LENGTH, excluded_chars=UniqueID.DEFAULT_EXCLUDED_CHARS):
+def get_unique_id(length=UniqueID.DEFAULT_ID_LENGTH, excluded_chars=UniqueID.DEFAULT_EXCLUDED_CHARS):
     """
     Function returns unique ID.
     """
-    unique_id = UniqueID(max_length=max_length, excluded_chars=excluded_chars)
+    unique_id = UniqueID(length=length, excluded_chars=excluded_chars)
     return unique_id.generate_id()
+

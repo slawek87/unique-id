@@ -18,18 +18,18 @@ class TestStringMethods(unittest.TestCase):
 
     def test_max_length(self):
         for item in range(1000):
-            max_length = randint(1, 128)
-            unique_id = get_unique_id(max_length=max_length)
+            id_length = randint(1, 128)
+            unique_id = get_unique_id(length=id_length)
 
-            is_over_length = len(unique_id) != max_length
+            is_over_length = len(unique_id) != id_length
             self.assertFalse(is_over_length)
 
     def test_excluded_chars(self):
-        max_length = 256
+        id_length = 256
         excluded_chars = [1, 'f', 'm', 'a', 4, 5, 'Z', 'w', '_']
 
         for item in range(1000):
-            unique_id = get_unique_id(max_length=max_length, excluded_chars=excluded_chars)
+            unique_id = get_unique_id(length=id_length, excluded_chars=excluded_chars)
 
             for seed in unique_id:
                 is_excluded_char = seed in excluded_chars
