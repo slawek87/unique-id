@@ -1,4 +1,4 @@
-from random import random
+import random
 
 
 class UniqueID(object):
@@ -37,7 +37,7 @@ class UniqueID(object):
         """
         unique_id = ""
 
-        while len(unique_id) < self.DEFAULT_MAX_LENGTH + 1:
+        while len(unique_id) < self.max_length:
             ascii_number = self.get_random_bits()
 
             if self.is_approved_ascii(ascii_number):
@@ -49,6 +49,9 @@ class UniqueID(object):
         return unique_id
 
 
-def get_unique_id(max_length=None, excluded_chars=None):
+def get_unique_id(max_length=UniqueID.DEFAULT_MAX_LENGTH, excluded_chars=UniqueID.DEFAULT_EXCLUDED_CHARS):
+    """
+    Function returns unique ID.
+    """
     unique_id = UniqueID(max_length=max_length, excluded_chars=excluded_chars)
     return unique_id.generate_id()
