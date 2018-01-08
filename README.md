@@ -1,6 +1,6 @@
 # UNIQUE-ID
 
-Unique-ID is a small lib to generate unique ids - string value.
+Unique-ID is a small lib to generate unique ids - string values.
 
 # HOW TO INSTALL?
 
