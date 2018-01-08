@@ -20,6 +20,6 @@ my_id = get_unique_id()
 print(my_id)
 
 # Returns id with length 8 and without `A` and `a` letters.
-my_id = get_unique_id(length="8", excluded_chars="Aa")
+my_id = get_unique_id(length=8, excluded_chars="Aa")
 print(my_id)
 ```
