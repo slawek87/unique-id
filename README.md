@@ -1,4 +1,10 @@
+# UNIQUE-ID
+
+Unique-ID is a small lib to generate unique ids - string value.
+
 # HOW TO INSTALL?
+
+To install `unique-id` use pip package manager.
 
 `pip install unique-id`
 
