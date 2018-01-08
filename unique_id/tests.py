@@ -1,7 +1,7 @@
 from random import randint
 import unittest
 
-from lib.main import get_unique_id
+from unique_id import get_unique_id
 
 
 class TestStringMethods(unittest.TestCase):

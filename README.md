@@ -13,7 +13,7 @@ To install `unique-id` use pip package manager.
 To get unique ID you have to call method `get_unique_id`.
 
 ```python
-from lib.main import get_unique_id
+from unique_id import get_unique_id
 
 # Default returns id with length 14 and without `:*^`\",.~;%+-'` chars.
 my_id = get_unique_id()
